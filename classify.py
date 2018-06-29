@@ -61,7 +61,7 @@ def load_dataset(filename):
     for i in f:
         line = i[:-1].split(";")
         #
-        x = np.array(line[2:]).astype("float32")
+        x = np.array(line[2:]).astype("float64")
         if(len(x) == nr_features):       
             X.append(x)
             Z.append(line[1])

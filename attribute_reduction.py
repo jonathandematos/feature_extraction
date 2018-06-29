@@ -72,12 +72,12 @@ def load_breakhis(filename):
     for i in f:
         line = i[:-1].split(";")
         #
-        x = np.array(line[2:])
+        x = np.array(line[1:])
         if(len(x) == nr_features):       
             X.append(x.astype(np.float))
-            Z.append(line[1])
-            W.append(line[0])
-            Y.append(TumorToLabel(line[1]))
+            Z.append(line[0].split("/")[-1])
+            W.append(line[0].split("/")[-2])
+            #Y.append(TumorToLabel(line[0]))
         else:
             print("Erro: {} {}".format(line[1], len(x)))
     #
